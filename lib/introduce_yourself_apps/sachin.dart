@@ -24,16 +24,6 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.black54,
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.white,
-          child: const Icon(
-            Icons.dangerous_outlined,
-            size: 30,
-            color: Colors.black,
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: SafeArea(
           child: Container(
             decoration: const BoxDecoration(
@@ -41,11 +31,11 @@ class MyApp extends StatelessWidget {
                 image: AssetImage(
                   'assets/background_image.jpeg',
                 ),
+                fit: BoxFit.cover,
               ),
             ),
             child: Center(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Padding(
                     padding: EdgeInsets.only(
@@ -55,7 +45,7 @@ class MyApp extends StatelessWidget {
                       backgroundImage: AssetImage(
                         'assets/circle_avatar.jpeg',
                       ),
-                      radius: 30,
+                      radius: 60,
                     ),
                   ),
                   Padding(
@@ -69,7 +59,6 @@ class MyApp extends StatelessWidget {
                         border: Border.all(
                           color: Colors.white,
                           width: 3,
-                          style: BorderStyle.none,
                         ),
                       ),
                       child: Row(
@@ -102,7 +91,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const [
                           Text(
                             'Roll No.',
@@ -118,7 +107,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       top: 30,
                     ),
                     child: Container(
@@ -132,17 +121,15 @@ class MyApp extends StatelessWidget {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const Text(
+                        children: const [
+                          Text(
                             'Hobby',
                             style: textStyle,
                           ),
-                          const Text('--', style: textStyle),
+                          Text('--', style: textStyle),
                           Text(
                             'Writing',
-                            style: textStyle.copyWith(
-                              color: Colors.red,
-                            ),
+                            style: textStyle,
                           ),
                         ],
                       ),
@@ -168,8 +155,8 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
+                  const Padding(
+                    padding: EdgeInsets.only(
                       top: 50,
                     ),
                     child: Text(
@@ -178,13 +165,6 @@ class MyApp extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        shadows: [
-                          Shadow(
-                            color: Colors.blue,
-                            blurRadius: 1,
-                            offset: Offset.fromDirection(1, 2.5),
-                          ),
-                        ],
                       ),
                     ),
                   )
